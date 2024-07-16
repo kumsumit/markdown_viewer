@@ -14,7 +14,7 @@ import 'builders/link_builder.dart';
 import 'builders/list_builder.dart';
 import 'builders/paragraph_builder.dart';
 import 'builders/simple_inlines_builder.dart';
-import 'builders/table_bilder.dart';
+import 'builders/table_builder.dart';
 import 'builders/thematic_break_builder.dart';
 import 'definition.dart';
 import 'extensions.dart';
@@ -47,7 +47,7 @@ class MarkdownRenderer implements NodeVisitor {
           fontSize: 16,
           height: 1.5,
           color: (context != null
-                  ? Theme.of(context).textTheme.bodyText2?.color
+                  ? Theme.of(context).textTheme.bodyMedium?.color
                   : null) ??
               const Color(0xff333333),
         ),
@@ -316,10 +316,9 @@ class _TreeElement extends MarkdownTreeElement {
           style: null,
         );
 
-  _TreeElement.fromAstElement(MarkdownElement element, {TextStyle? style})
+  _TreeElement.fromAstElement(MarkdownElement element, {super.style})
       : super(
           element: element,
-          style: style,
         );
 }
 

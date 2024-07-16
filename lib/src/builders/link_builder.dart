@@ -29,7 +29,7 @@ class LinkBuilder extends MarkdownElementBuilder {
 
     return TapGestureRecognizer()
       ..onTap = () {
-        _onTap!(
+        _onTap(
           attributes['destination'],
           attributes['title'],
         );
